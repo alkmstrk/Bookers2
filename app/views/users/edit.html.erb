@@ -1,0 +1,32 @@
+<div class="page-header">
+</div>
+
+<% if flash[:notice] %>
+      <p><%= flash[:notice] %></p>
+<% end %>
+
+<div class="all">
+	<h2>User Info</h2>
+
+	<%= form_for(@user) do |f| %>
+		<div class="box">
+			<h4>Name</h4>
+			<%= f.text_field :name %>
+		</div>
+
+		<div class="box">
+			<h4>Introduction</h4>
+			<%= f.text_area :introduction %>
+		</div>
+
+		<div class="box">
+			<h4>ProfileImage</h4>
+			<%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+		</div>
+
+		<div class="box">
+			<p><%= f.submit "Update User" %></p>
+		</div>
+	<% end %>
+
+</div>
